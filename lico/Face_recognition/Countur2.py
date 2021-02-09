@@ -71,8 +71,8 @@ if __name__ == '__main__':
                 angle = ' '
                 list_storon = []
                 if area > 5000:
-                    middle_x += rect[0][1]
-                    middle_y += rect[0][0]
+                    middle_x += rect[0][0]
+                    middle_y += rect[0][1]
                     m += 1
                     n = 0
                     cv2.drawContours(img, [box], 0, color_blue, 2)
@@ -91,9 +91,9 @@ if __name__ == '__main__':
                     if(raspberrypi == False):
                         if (black == 0 and len(contours0) > 0):
                             try:
-                                w = rect[1][1] #1, 0
-                                h = rect[1][0] #1, 1
-                                crop_img = img[int(y - h/2):int(y + h/2), int(x - w/2):int(x + w/2)]
+                                w = rect[1][0] #1, 0
+                                h = rect[1][1] #1, 1
+                                crop_img = img[int(y - 200):int(y + 200), int(x - w/2):int(x + w/2)]
                                 print("################")
                                 print(x, rect[0][1])
                                 print(y, rect[0][0])
